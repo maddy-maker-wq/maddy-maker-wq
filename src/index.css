@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.touch-target {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+@keyframes urgent-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.88; transform: scale(1.03); }
+}
+
+.animate-urgent {
+  animation: urgent-pulse 1.4s infinite ease-in-out;
+}
+
+/* Custom scrollbar for horizontal pills */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
